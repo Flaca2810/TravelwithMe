@@ -1,14 +1,84 @@
 body{
-     
+
+    position: relative;
     background-color: black;
 }
 
-h1{
+
+.flip-card{
+  background-color: transparent;
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+  margin-top: 1.5rem;
+  margin: 0 auto;
+  /* transition:all 3s ease-out; */
+  /* margin-top: 110px; */
+ 
+}
+
+
+.flip-card-inner{ 
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 3s;
+  transform-style: preserve-3d;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+  
+
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+
+
+/* .flip-card:hover {
+  /* width: 500px; */
+  /* border: 3px solid white;
+  transform: rotateY(150deg); */
+
+  
+/* } */ 
+ 
+.h1{
 
   font-family:'Cinzel', serif;
   line-height: 1.04;
+  /* font-size: 4em; */
+  margin-top: 0;
+  /* font-size: 6rem; */
+  text-align: center;
+  background: -webkit-radial-gradient(center top, #EB9038, #F3C3CF, #8DC4F3);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+
+.flip-card-front {
+
+  background-color: black;
+  font-family:'Cinzel', serif;
+  line-height: 1.04;
   font-size: 4em;
-  margin-top: 80px;
+  /* margin-top: 0;
+  margin: 0 auto; */
   /* font-size: 6rem; */
   text-align: center;
   background: -webkit-radial-gradient(center top, #EB9038, #F3C3CF, #8DC4F3);  
@@ -16,17 +86,29 @@ h1{
   -webkit-text-fill-color: transparent;
 }
 
-.div{
-  width:500px;
-  transition:all 3s ease-out;
+
+.flip-card-back {
+  background-color:black;
+  color:  #EB9038;
+  transform: rotateY(180deg);
 }
 
-.div:hover {
-  /* width: 500px; */
-  border: 1px solid white;
-  transform: rotateY(150deg);
-  
-}
+
+/* .back{ 
+
+     background-color:whitesmoke;
+
+} */
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,10 +137,6 @@ ul .lila{
   
        
 
-         
-
-
-
 .hover:hover{
   background-color: #f3c3cf8e;
   border-radius: 50%;
@@ -68,8 +146,8 @@ ul .lila{
 
 
 
-  img{           
-    width:70px;
+  .logo{           
+    width:150px;
     margin-top: 0px;
     position: absolute;
     top: 5px;
@@ -79,15 +157,27 @@ ul .lila{
 }
 
 
-.gif{
-       display: inline-block;
-       width: 100px;
-       height: 100px;
-       position: relative;
+.woman{
+
+     width:100%
+}
+
+.gif{ 
+       position: absolute;
+       right: 311px;;
+       top: -63px;;
+       width: 200px;
        padding-left: auto;
-       border: blanchedalmond solid 3px;
+      
        
       
+}
+
+@media  (max-width:664px) {
+
+  .gif{
+      display: none;
+  }
 }
 
 
@@ -96,7 +186,8 @@ footer{
     width: 100%;
     bottom: 0;
     color: blanchedalmond;
-    position: absolute;
+    position: sticky;
+    margin-top: 37%;
 }
 
 
